@@ -11,17 +11,8 @@ const domainServices = [];
   imports: [
     RestModule.forRoot(),
     WsModule.forRoot(),
-    ConfigModule.forRoot({ type: 'env' })
+    ConfigModule.forRoot({ type: 'env' }),
   ],
-  controllers: [],
   providers: [...applicationServices, ...domainServices],
 })
-export class AppModule {
-  constructor(
-    private readonly exampleService: ExampleService
-  ) {}
-
-  onModuleInit() {
-    this.exampleService.handle();
-  }
-}
+export class AppModule {}
